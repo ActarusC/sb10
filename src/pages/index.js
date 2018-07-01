@@ -1,16 +1,16 @@
 import React from "react";
-import Link from "gatsby-link";
+//import GamesList from "../components/gamesList.js";
+//import Link from "gatsby-link";
 
-export default () =>
-  <div style={{ color: `tomato` }}>
-    <h1>Hello Gatsby!</h1>
-    <p>Quel monde.</p>
-    <img src="https://source.unsplash.com/random/400x200" alt="" />
-    <br />
-    <div>
-      <Link to="/page-2/">Link</Link>
-    </div>
-    <div>
-      <Link to="/counter/">Counter</Link>
-    </div>
-  </div>
+export default () => 
+  <div>
+  <h1>Liste des matchs</h1>
+  {/* {
+    this.props.data.allGame.edges.map((edge, index) => {
+      const game = edge.node
+      return (
+        <div key={game.id}>{game.Sport} {game.DateHeure} {game.EquipeVis} @ {game.EquipeLoc} </div>
+      )
+    })
+  } */}
+</div>

@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-const queryString = require('query-string')
+//const queryString = require('query-string')
 const crypto = require('crypto')
 
 exports.sourceNodes = (
@@ -12,8 +12,8 @@ exports.sourceNodes = (
   delete configOptions.plugins
 
 
-// Helper function that processes a game to match Gatsby's node structure
-const processGame = game => {
+  // Helper function that processes a game to match Gatsby's node structure
+  const processGame = game => {
     const nodeId = game.Sport + game.id
     const nodeContent = JSON.stringify(game)
     const nodeContentDigest = crypto
@@ -47,10 +47,11 @@ const processGame = game => {
       .then(data => {
         // For each query result (or 'hit')
         data.forEach(game => {
-            const nodeData = processGame(game)
-            // Use Gatsby's createNode helper to create a node from the node data
-            createNode(nodeData)
+          const nodeData = processGame(game)
+          // Use Gatsby's createNode helper to create a node from the node data
+          createNode(nodeData)
         })
+        console.log("Ajouté " + data.length);
       })
   )
 }
